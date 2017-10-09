@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="home_dialog_margin">30dp</dimen>
+    <dimen name="home_dialog_close_size">30dp</dimen>
+    <dimen name="home_dialog_close_margin_left">15dp</dimen>
+    <dimen name="home_dialog_close_margin_top">15dp</dimen>
+
+    <dimen name="home_menu_recycler_margin_top">10dp</dimen>
+    <dimen name="home_menu_recycler_margin_bottom">10dp</dimen>
+    <dimen name="home_menu_recycler_interval">14dp</dimen>
+    <dimen name="home_menu_recycler_radius">10dp</dimen>
+
+    <dimen name="home_menu_recycler_text_margin_left">5dp</dimen>
+    <dimen name="home_menu_recycler_text_margin_right">5dp</dimen>
+
+
+    <dimen name="home_fab_anchor_margin_bottom">0dp</dimen>
+
+    <dimen name="home_title_margin_top">-100dp</dimen>
+
+</resources>

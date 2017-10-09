@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="net.chris.ui.slick.ui.model.ImageType" />
+
+        <variable
+            name="homeMenuItem"
+            type="net.chris.ui.slick.model.HomeMenuItem" />
+
+        <variable
+            name="itemWidth"
+            type="Integer" />
+
+        <variable
+            name="imageHeight"
+            type="Integer" />
+
+        <variable
+            name="itemOffset"
+            type="android.databinding.ObservableInt" />
+
+        <variable
+            name="rect"
+            type="android.graphics.Rect" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_menu_item_layout"
+        android:layout_width="@{itemWidth, default=match_parent}"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:transitionName="transition_menu_item_layout"
+        bind:itemOffset="@{itemOffset.get()}"
+        bind:rect="@{rect}">
+
+        <ImageView
+            android:id="@+id/item_menu_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="@{imageHeight, default=wrap_content}"
+            android:scaleType="matrix"
+            bind:image_type="@{ImageType.RECYCLER_ITEM}"
+            bind:image_uri="@{homeMenuItem.imageUri}"
+            tools:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/item_menu_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_menu_recycler_text_margin_left"
+            android:layout_marginRight="@dimen/home_menu_recycler_text_margin_right"
+            android:text="@{homeMenuItem.title}"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            tools:text="About Sushi" />
+
+        <TextView
+            android:id="@+id/item_menu_item_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_menu_recycler_text_margin_left"
+            android:layout_marginRight="@dimen/home_menu_recycler_text_margin_right"
+            android:text="@{homeMenuItem.summary}"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            tools:text="Sushi (すし, 寿司, 鮨) is the Japanese preparation and serving of specially prepared vinegared rice (鮨飯 sushi-meshi) combined with varied ingredients (ネタ neta) such as chiefly seafood (often uncooked), vegetables, and occasionally tropical fruits." />
+
+    </LinearLayout>
+</layout>

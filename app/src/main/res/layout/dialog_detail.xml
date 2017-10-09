@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="net.chris.ui.slick.ui.model.ImageType" />
+
+        <variable
+            name="dialogItem"
+            type="net.chris.ui.slick.model.HomeMenuItem" />
+
+        <variable
+            name="dialogImageHeight"
+            type="Integer" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/item_menu_item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:transitionName="transition_menu_item_layout">
+
+            <ImageView
+                android:id="@+id/item_menu_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="@{dialogImageHeight, default=wrap_content}"
+                android:scaleType="matrix"
+                bind:image_type="@{ImageType.DIALOG}"
+                bind:image_uri="@{dialogItem.imageUri}"
+                tools:src="@drawable/placeholder" />
+
+            <TextView
+                android:id="@+id/item_menu_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/home_menu_recycler_text_margin_left"
+                android:layout_marginRight="@dimen/home_menu_recycler_text_margin_right"
+                android:background="@android:color/white"
+                android:text="@{dialogItem.title}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                tools:text="About Sushi" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/item_menu_item_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_menu_recycler_text_margin_left"
+                    android:layout_marginRight="@dimen/home_menu_recycler_text_margin_right"
+                    android:background="@android:color/white"
+                    android:text="@{dialogItem.summary}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    tools:text="Sushi (すし, 寿司, 鮨) is the Japanese preparation and serving of specially prepared vinegared rice (鮨飯 sushi-meshi) combined with varied ingredients (ネタ neta) such as chiefly seafood (often uncooked), vegetables, and occasionally tropical fruits." />
+            </ScrollView>
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dialog_close"
+            android:layout_width="@dimen/home_dialog_close_size"
+            android:layout_height="@dimen/home_dialog_close_size"
+            android:layout_marginLeft="@dimen/home_dialog_close_margin_left"
+            android:layout_marginTop="@dimen/home_dialog_close_margin_top"
+            app:srcCompat="@drawable/ic_close" />
+    </FrameLayout>
+
+</layout>
+
