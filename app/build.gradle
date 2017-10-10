@@ -71,6 +71,7 @@ dependencies {
     def rxjava_version = '2.1.3'
     def rxlifecycle_version = '2.0.1'
     def picasso_version = '2.5.2'
+    def debug_version = '1.0.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -98,4 +99,6 @@ dependencies {
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:' + rxlifecycle_version
     // picasso
     compile 'com.squareup.picasso:picasso:' + picasso_version
+    // debug
+    debugCompile 'com.github.chrisfang6:debug-lib:v' + debug_version
 }

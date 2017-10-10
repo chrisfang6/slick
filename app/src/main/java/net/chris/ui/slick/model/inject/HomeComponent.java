@@ -25,4 +25,8 @@ public abstract class HomeComponent {
         return instance;
     }
 
+    public static final void uninject() {
+        instance = null;
+    }
+
 }

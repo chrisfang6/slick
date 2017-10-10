@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
         viewModel.removeOnPropertyChangedCallbacks();
+        HomeComponent.uninject();
         if (unbinder != null) {
             unbinder.unbind();
         }
